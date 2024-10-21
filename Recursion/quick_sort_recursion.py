@@ -12,11 +12,12 @@ def pivot_position(arr):
         if(arr[i]<arr[pivot]):
             i+=1
             continue
-        if(arr[j]>arr[pivot]):
+        elif(arr[j]>=arr[pivot]):
             j-=1
             continue
         arr[i],arr[j]=arr[j],arr[i]
         i+=1
+    print(pivot)
     return pivot
 
 def quick_sort(arr):
@@ -29,7 +30,7 @@ def quick_sort(arr):
     right=quick_sort(arr[pivot+1:])
     return left+[arr[pivot]]+right
 
-l1=[5,1,12,3,9,6]
+l1=[3,6,7,2,1,4,5,4,4]
 print(pivot_position(l1))
 print(l1)
 print(quick_sort(l1))
